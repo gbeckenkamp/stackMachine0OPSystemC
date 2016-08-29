@@ -1,0 +1,21 @@
+7                ## VAR
+0                ## END
+store 1 0        ## aloca o primeiro valor na pilha em memória, vet[END] = VAR
+0                ## 0 para referencia de comparação
+-- 2 1           ## VAR--
+++ 2 1           ## END++
+callm 1 2 2      ## se VAR > 0, chamada recursiva
+calleq 1 2 16    ## se VAR == 0, recursão acabou e os valores ao topo devem ser ajeitados
+load 0           ## carrega vet[END] da memória
+mlt 0 2          ## acc *= vet[END]
+++ 2 1           ## END++
+beq 0 5 20       ## se END++ == FIM
+++ 5 0           ## traz FIM ao topo
+++ 2 0           ## traz ACC ao topo
+++ 2 0           ## traz END ao topo
+return
+-- 0 1           ## fatorial inicial -1, exemplo: FIM = 7! - 1 = 6
+1                ## base para multiplicação, ACC = 1
+0                ## endereço inicial no vetor e memória, END = 0
+return
+nop

@@ -1,0 +1,3 @@
+Os códigos utilizados para as máquinas 0op, 2op e MIPS encontram-se nas pastas deste mesmo diretário. Dentro deles, há uma sub divisão entre low, medium e high charge. Desta forma, os códigos com o menor número de execuções está contido no diretório low, o com o número de iterações intermediário está no medium e o com maior número de execuções no high.
+
+Somente no caso do MIPS todos os códigos estão contidos no LowCharge. Neste caso, basta descomentar a declaração dos vetores e das variáveis indicadas conforme o número de iterações desejadas.

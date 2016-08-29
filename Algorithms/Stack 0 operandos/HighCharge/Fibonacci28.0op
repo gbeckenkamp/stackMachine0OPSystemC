@@ -1,0 +1,28 @@
+28                   ## number of repetitions  ||| Abbreviations (DS - data stack, RL - repetitions left)
+1                    ## This algorithm perform a fibonacci sequence, and place in the top of the data stack the value find in the last iteration.
+1                    ## To do so, the number of repetition left is placed in the tail of the DS, the last calculated value goes on top and the value before on next to the top of DS.
+call 24              ## Since the fibonacci sequence start whit dual ones, the DS start with bouth and pick the tail
+dup                  ## Duplicate the tail value since the branch0 operation interpret it as a boolean and pop it after testing it
+branch0 26           ## If the tail(number of repetitions left) 0, end the program
+sub 1                ## One less repetition left
+dup                  ## Suplicate and test again, this is done since the two first iterations result one
+branch0 26           ## All repetitions done, end the program
+call 22              ## Place the left repetitions on the tail 
+dup                  ## Duplicate the value one
+add                  ## Sum it
+call 24              ## Put the tail on top and subtract. From now on, every iteration start here
+dup                  ## Duplicate
+branch0 26           ## If the tail is 0, end
+call 22              ## Put the left repetitions on the tail
+pick 2               ## Pick the last-1 value and put on the top, DS is like-> RL, last-1, last, last-1
+pick 2               ## Pick the last value and put on the top, DS is like-> RL, last-1, last, last-1, last
+pick' 4              ## Place last as the new last-1, DS is like-> RL, new(last-1), last, last-1, last
+pop                  ## Pop of the last value, DS is like-> RL, new(last-1), last, last-1
+add                  ## Calculate the new value, DS is like-> RL, new(last-1), new(last)
+branch 12            ## aply another iteration on DS.
+pick' 4              ## function 1, store the actual number of repetitions on the tail of DS and pop the value from the top.
+pop  ;               ## end of function 1          
+pick 3               ## function 2, pick the value on the tail of DS and subtract it by one.
+sub 1 ;              ## end of function 2           
+pop
+nop

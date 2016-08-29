@@ -1,0 +1,153 @@
+\hypertarget{classRam}{\section{Ram Class Reference}
+\label{classRam}\index{Ram@{Ram}}
+}
+
+
+Random Access Memory.  
+
+
+
+
+{\ttfamily \#include $<$Ram.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRam_ae60158266ebc375950bf310fcbebb95f}{set\+Ram\+Acc} (int $\ast$acc)
+\item 
+\hyperlink{classRam_a88fb1e8b99dad1628805952c41a146e3}{$\sim$\+Ram} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRam_a93cee12a3589cd5b05e16a88ed0ed5f1}{b\+\_\+transport} (tlm\+::tlm\+\_\+generic\+\_\+payload \&trans, sc\+\_\+time \&delay)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+uint$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classRam_ade86bafdb14f3ddb236bcf807abab45c}{mem} \mbox{[}\hyperlink{Defines_8h_ab683dabe89fc48ada1209e0e3733862a}{R\+A\+M\+\_\+\+D\+E\+P\+T\+H}\mbox{]}
+\item 
+int $\ast$ \hyperlink{classRam_a0ee6ab8e997240bb0d37947f67c0ab7a}{cnt\+Ram\+Acc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Random Access Memory. 
+
+Módulo responsável por manter e fazer a interface entre a memória R\+A\+M com os demais módulos.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 31 of file Ram.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRam_a88fb1e8b99dad1628805952c41a146e3}{\index{Ram@{Ram}!````~Ram@{$\sim$\+Ram}}
+\index{````~Ram@{$\sim$\+Ram}!Ram@{Ram}}
+\subsubsection[{$\sim$\+Ram}]{\setlength{\rightskip}{0pt plus 5cm}Ram\+::$\sim$\+Ram (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRam_a88fb1e8b99dad1628805952c41a146e3}
+Destrutor do módulo. 
+
+Definition at line 85 of file Ram.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRam_a93cee12a3589cd5b05e16a88ed0ed5f1}{\index{Ram@{Ram}!b\+\_\+transport@{b\+\_\+transport}}
+\index{b\+\_\+transport@{b\+\_\+transport}!Ram@{Ram}}
+\subsubsection[{b\+\_\+transport}]{\setlength{\rightskip}{0pt plus 5cm}void Ram\+::b\+\_\+transport (
+\begin{DoxyParamCaption}
+\item[{tlm\+::tlm\+\_\+generic\+\_\+payload \&}]{trans, }
+\item[{sc\+\_\+time \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRam_a93cee12a3589cd5b05e16a88ed0ed5f1}
+Socket responsável por mater e fazer a interface com a memórai R\+A\+M. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & Payload contendo os dados do pacote recebido. \\
+\hline
+{\em delay} & Timeout para a condirmação do comando recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Ram.\+cpp.
+
+
+
+References cnt\+Ram\+Acc, D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+\_\+\+R\+A\+M\+\_\+\+D\+O\+W\+N, D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+\_\+\+R\+A\+M\+\_\+\+T\+O\+P, mem, and S\+I\+Z\+E.
+
+\hypertarget{classRam_ae60158266ebc375950bf310fcbebb95f}{\index{Ram@{Ram}!set\+Ram\+Acc@{set\+Ram\+Acc}}
+\index{set\+Ram\+Acc@{set\+Ram\+Acc}!Ram@{Ram}}
+\subsubsection[{set\+Ram\+Acc}]{\setlength{\rightskip}{0pt plus 5cm}void Ram\+::set\+Ram\+Acc (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{acc}
+\end{DoxyParamCaption}
+)}}\label{classRam_ae60158266ebc375950bf310fcbebb95f}
+Inicia o ponteiro contador de acessos a memória R\+A\+M. 
+\begin{DoxyParams}{Parameters}
+{\em acc} & Ponteiro para o contador de acessos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Ram.\+cpp.
+
+
+
+References cnt\+Ram\+Acc.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRam_a0ee6ab8e997240bb0d37947f67c0ab7a}{\index{Ram@{Ram}!cnt\+Ram\+Acc@{cnt\+Ram\+Acc}}
+\index{cnt\+Ram\+Acc@{cnt\+Ram\+Acc}!Ram@{Ram}}
+\subsubsection[{cnt\+Ram\+Acc}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Ram\+::cnt\+Ram\+Acc\hspace{0.3cm}{\ttfamily [private]}}}\label{classRam_a0ee6ab8e997240bb0d37947f67c0ab7a}
+Contador de acessos a R\+A\+M. 
+
+Definition at line 35 of file Ram.\+h.
+
+
+
+Referenced by b\+\_\+transport(), and set\+Ram\+Acc().
+
+\hypertarget{classRam_ade86bafdb14f3ddb236bcf807abab45c}{\index{Ram@{Ram}!mem@{mem}}
+\index{mem@{mem}!Ram@{Ram}}
+\subsubsection[{mem}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+uint$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Ram\+::mem\mbox{[}{\bf R\+A\+M\+\_\+\+D\+E\+P\+T\+H}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classRam_ade86bafdb14f3ddb236bcf807abab45c}
+Memória. 
+
+Definition at line 34 of file Ram.\+h.
+
+
+
+Referenced by b\+\_\+transport().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Ram_8h}{Ram.\+h}\item 
+\hyperlink{Ram_8cpp}{Ram.\+cpp}\end{DoxyCompactItemize}

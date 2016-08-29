@@ -1,0 +1,55 @@
+3             ##
+8             ##
+7             ##
+9
+1
+2
+4
+12
+store 0
+store 1
+store 2
+store 3
+store 4
+store 5
+store 6
+store 7     ##
+8           ## Tamanho do vetor
+1           ## Começa a testar em um já que 0 não possibilita um swap no vetor, indice atual global
+dup
+dup         ## inicio do main
+load        ## Carrega o candidato a swap
+pick 2      ## Pega o endereço do indice atual
+sub 1       ## Pega um endereço abaixo
+dup         ## Duplica o endereço computado já que o load irá consumi-lo e temos que usalo novamente
+load        ## Carrega o valor abaio do indice atual
+pick 3      ## Traz ao topo o valor de indice atual
+<           ## Se o valor do indice atual é menor que o valor abaixo
+branch0 49  ## Caso 0, o indice atual esta no seu lugar e o atual global deve ser acrescido
+pick 3      ## Caso contratio, realiza o swap no vetor
+pick 2
+store
+pop
+pop
+pick 4
+pick 2
+store
+pop         ## Retira os endereços calculados e valores da pilha, restanto somente o tamanho do vetor e o indice global
+pop
+pop
+pop
+sub 1       ## Indice atual é decrescido para testar um novo swap
+dup         ## Duplica o valor já que o branch0 ira consumi-lo
+branch0 44  ## Chegou a base do vetor, aumenta o indice global
+branch 19   ## Caso contrario, tenta mais um swap
+pop         ## Remove o indice atual
+add 1       ## Aumenta o indice atual global
+sub'        ## Faz um push da subtração do tamanho do vetor e do atual global
+branch0 54  ## Caso sejam iguais, termina
+branch 18   ## Senão, reinicia os swaps
+pop         ## Retira os endereços e valores da pilha
+pop
+pop
+pop
+branch 44   ## Realiza o tratamento para testar o fim da execução
+nop

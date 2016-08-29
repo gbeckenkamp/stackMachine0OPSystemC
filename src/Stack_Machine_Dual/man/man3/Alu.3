@@ -1,0 +1,120 @@
+.TH "Alu" 3 "Sat Sep 5 2015" "Version 1.0" "Stack_Machine_Dual_Operand" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Alu \- 
+.PP
+Unidade Lógico Aritmética\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Alu\&.h>\fP
+.PP
+Inherits sc_module\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBb_transport_Fet\fP (tlm::tlm_generic_payload &trans, sc_time &delay)"
+.br
+.ti -1c
+.RI "virtual void \fBb_transport_DS\fP (tlm::tlm_generic_payload &trans, sc_time &delay)"
+.br
+.ti -1c
+.RI "void \fBsetPC\fP (int *pc)"
+.br
+.ti -1c
+.RI "\fB~Alu\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Unidade Lógico Aritmética\&. 
+
+Módulo responsável pela computação dos valores carregados das pilhas e por alocar o resultado na pilha de destino ou em memória\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Gerson Miguel Beckenkamp 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2015/09/05 14:16:20 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file Alu\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Alu::~Alu ()"
+Destrutor do módulo \fBAlu\fP\&. 
+.PP
+Definition at line 741 of file Alu\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Alu::b_transport_DS (tlm::tlm_generic_payload &trans, sc_time &delay)\fC [virtual]\fP"
+Socket responsável por receber os dados carregados da pilha de dados\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItrans\fP Payload contendo os dados do pacote recebido\&. 
+.br
+\fIdelay\fP Timeout para a condirmação do comando recebido\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file Alu\&.cpp\&.
+.PP
+References SIZE\&.
+.SS "void Alu::b_transport_Fet (tlm::tlm_generic_payload &trans, sc_time &delay)\fC [virtual]\fP"
+Socket responsável por receber a instrução carregada pelo \fBFetch\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItrans\fP Payload contendo os dados do pacote recebido\&. 
+.br
+\fIdelay\fP Timeout para a condirmação do comando recebido\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file Alu\&.cpp\&.
+.PP
+References SIZE\&.
+.SS "void Alu::setPC (int *pc)"
+Inicia o contador de programa do módulo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpc\fP Ponteiro para o contador de programa\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file Alu\&.cpp\&.
+.PP
+Referenced by SC_MODULE()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Stack_Machine_Dual_Operand from the source code\&.

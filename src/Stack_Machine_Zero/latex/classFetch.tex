@@ -1,0 +1,237 @@
+\hypertarget{classFetch}{\section{Fetch Class Reference}
+\label{classFetch}\index{Fetch@{Fetch}}
+}
+
+
+Interface da R\+O\+M com o resto do sistema.  
+
+
+
+
+{\ttfamily \#include $<$Fetch.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFetch_af5532f59af4faa4b22abe5c818e54775}{set\+P\+C} (int $\ast$pc)
+\item 
+void \hyperlink{classFetch_aabf17d2c69db4926534637e6d45a75f5}{set\+Cnt} (int $\ast$cnt)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFetch_a2201a1cd5048111b9f7bc7266964e0fb}{transaction\+\_\+\+Read} ()
+\item 
+void \hyperlink{classFetch_a4f2066d5330459037444ecb2a063f1da}{transaction\+\_\+\+Write} ()
+\item 
+void \hyperlink{classFetch_a5df8ae654e8d6a679a31f69bee65c7f0}{thread\+\_\+process} ()
+\begin{DoxyCompactList}\small\item\em Thread principal. Thread responsável por ler novas instruções e envialas para os demais módulos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classFetch_ab7c97d2c0dab91563c0f33ba6c6a4cb0}{instruction}
+\item 
+int $\ast$ \hyperlink{classFetch_a843f7a6498d7c4049751f8e7267f6609}{P\+C}
+\item 
+int $\ast$ \hyperlink{classFetch_a9598888b1bb54bf4946efe56639279d8}{cnt\+Exec}
+\item 
+bool \hyperlink{classFetch_ae42d76542792425cdd2b896b4558cb8b}{end}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface da R\+O\+M com o resto do sistema. 
+
+Módulo responsável por controlar o módulo R\+O\+M, carregando as instruções e repasando-\/as para o módulos \hyperlink{classAlu}{Alu}.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 32 of file Fetch.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFetch_aabf17d2c69db4926534637e6d45a75f5}{\index{Fetch@{Fetch}!set\+Cnt@{set\+Cnt}}
+\index{set\+Cnt@{set\+Cnt}!Fetch@{Fetch}}
+\subsubsection[{set\+Cnt}]{\setlength{\rightskip}{0pt plus 5cm}void Fetch\+::set\+Cnt (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{cnt}
+\end{DoxyParamCaption}
+)}}\label{classFetch_aabf17d2c69db4926534637e6d45a75f5}
+Inicia o ponteiro contador de ciclos de execução.
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file Fetch.\+cpp.
+
+
+
+References cnt\+Exec.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classFetch_af5532f59af4faa4b22abe5c818e54775}{\index{Fetch@{Fetch}!set\+P\+C@{set\+P\+C}}
+\index{set\+P\+C@{set\+P\+C}!Fetch@{Fetch}}
+\subsubsection[{set\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}void Fetch\+::set\+P\+C (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{pc}
+\end{DoxyParamCaption}
+)}}\label{classFetch_af5532f59af4faa4b22abe5c818e54775}
+Inicia o contador de programa do módulo. 
+\begin{DoxyParams}{Parameters}
+{\em pc} & Ponteiro para o contador de programa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Fetch.\+cpp.
+
+
+
+References P\+C.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classFetch_a5df8ae654e8d6a679a31f69bee65c7f0}{\index{Fetch@{Fetch}!thread\+\_\+process@{thread\+\_\+process}}
+\index{thread\+\_\+process@{thread\+\_\+process}!Fetch@{Fetch}}
+\subsubsection[{thread\+\_\+process}]{\setlength{\rightskip}{0pt plus 5cm}void Fetch\+::thread\+\_\+process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_a5df8ae654e8d6a679a31f69bee65c7f0}
+
+
+Thread principal. Thread responsável por ler novas instruções e envialas para os demais módulos. 
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Fetch.\+cpp.
+
+
+
+References cnt\+Exec, end, P\+C, transaction\+\_\+\+Read(), and transaction\+\_\+\+Write().
+
+\hypertarget{classFetch_a2201a1cd5048111b9f7bc7266964e0fb}{\index{Fetch@{Fetch}!transaction\+\_\+\+Read@{transaction\+\_\+\+Read}}
+\index{transaction\+\_\+\+Read@{transaction\+\_\+\+Read}!Fetch@{Fetch}}
+\subsubsection[{transaction\+\_\+\+Read}]{\setlength{\rightskip}{0pt plus 5cm}void Fetch\+::transaction\+\_\+\+Read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_a2201a1cd5048111b9f7bc7266964e0fb}
+Efetua uma leitura no módulo R\+O\+M.
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Fetch.\+cpp.
+
+
+
+References end, instruction, and P\+C.
+
+
+
+Referenced by thread\+\_\+process().
+
+\hypertarget{classFetch_a4f2066d5330459037444ecb2a063f1da}{\index{Fetch@{Fetch}!transaction\+\_\+\+Write@{transaction\+\_\+\+Write}}
+\index{transaction\+\_\+\+Write@{transaction\+\_\+\+Write}!Fetch@{Fetch}}
+\subsubsection[{transaction\+\_\+\+Write}]{\setlength{\rightskip}{0pt plus 5cm}void Fetch\+::transaction\+\_\+\+Write (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_a4f2066d5330459037444ecb2a063f1da}
+Envia a nova instrução para o módulo \hyperlink{classAlu}{Alu}.
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file Fetch.\+cpp.
+
+
+
+References instruction.
+
+
+
+Referenced by thread\+\_\+process().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFetch_a9598888b1bb54bf4946efe56639279d8}{\index{Fetch@{Fetch}!cnt\+Exec@{cnt\+Exec}}
+\index{cnt\+Exec@{cnt\+Exec}!Fetch@{Fetch}}
+\subsubsection[{cnt\+Exec}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Fetch\+::cnt\+Exec\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_a9598888b1bb54bf4946efe56639279d8}
+Contador de ciclos de execução. 
+
+Definition at line 37 of file Fetch.\+h.
+
+
+
+Referenced by set\+Cnt(), and thread\+\_\+process().
+
+\hypertarget{classFetch_ae42d76542792425cdd2b896b4558cb8b}{\index{Fetch@{Fetch}!end@{end}}
+\index{end@{end}!Fetch@{Fetch}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}bool Fetch\+::end\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_ae42d76542792425cdd2b896b4558cb8b}
+Flag para o fim da execução. 
+
+Definition at line 38 of file Fetch.\+h.
+
+
+
+Referenced by thread\+\_\+process(), and transaction\+\_\+\+Read().
+
+\hypertarget{classFetch_ab7c97d2c0dab91563c0f33ba6c6a4cb0}{\index{Fetch@{Fetch}!instruction@{instruction}}
+\index{instruction@{instruction}!Fetch@{Fetch}}
+\subsubsection[{instruction}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Fetch\+::instruction\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_ab7c97d2c0dab91563c0f33ba6c6a4cb0}
+Instrução atual. 
+
+Definition at line 35 of file Fetch.\+h.
+
+
+
+Referenced by transaction\+\_\+\+Read(), and transaction\+\_\+\+Write().
+
+\hypertarget{classFetch_a843f7a6498d7c4049751f8e7267f6609}{\index{Fetch@{Fetch}!P\+C@{P\+C}}
+\index{P\+C@{P\+C}!Fetch@{Fetch}}
+\subsubsection[{P\+C}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Fetch\+::\+P\+C\hspace{0.3cm}{\ttfamily [private]}}}\label{classFetch_a843f7a6498d7c4049751f8e7267f6609}
+Contador de programa. 
+
+Definition at line 36 of file Fetch.\+h.
+
+
+
+Referenced by set\+P\+C(), thread\+\_\+process(), and transaction\+\_\+\+Read().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Fetch_8h}{Fetch.\+h}\item 
+\hyperlink{Fetch_8cpp}{Fetch.\+cpp}\end{DoxyCompactItemize}

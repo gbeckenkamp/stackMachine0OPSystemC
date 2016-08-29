@@ -1,0 +1,9 @@
+14             ## Carrega o literal com o valor do fatorial desejado no topo da pilha
+-- 0 1         ## Subtrai o topo (posição 0) com o offset 1
+0              ## Carrega o zero para comparação 
+beq 0 1 7      ## Se a ultima subtração for 0, termina o programa
+mlt 1 2        ## Multiplica o valor da ultima subtração (posição 1) com o acumulador das multiplicações (posição 2)
+-- 2 1         ## Traz ao topo o novo multiplicador 
+branch 2       ## Pula para a instanciação do 0 
+++ 2 0         ## Traz o resultado para o topo da pilha
+nop            ## Fim da execução

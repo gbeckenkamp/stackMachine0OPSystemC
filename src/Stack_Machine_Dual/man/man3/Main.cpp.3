@@ -1,0 +1,73 @@
+.TH "Main.cpp" 3 "Sat Sep 5 2015" "Version 1.0" "Stack_Machine_Dual_Operand" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Main.cpp \- 
+.PP
+Método main\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'systemc'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include 'Stack\&.h'\fP
+.br
+\fC#include 'DataStack\&.h'\fP
+.br
+\fC#include 'Rom\&.h'\fP
+.br
+\fC#include 'DSController\&.h'\fP
+.br
+\fC#include 'Fetch\&.h'\fP
+.br
+\fC#include 'Alu\&.h'\fP
+.br
+\fC#include 'Ram\&.h'\fP
+.br
+\fC#include 'tlm\&.h'\fP
+.br
+\fC#include 'tlm_utils/simple_initiator_socket\&.h'\fP
+.br
+\fC#include 'tlm_utils/simple_target_socket\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSC_MODULE\fP (Top)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Método main\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Gerson Miguel Beckenkamp 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2015/09/05 14:16:20 
+.RE
+.PP
+
+.PP
+Definition in file \fBMain\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "SC_MODULE (Top)"
+Módulo de sistema, contendo todos os demais módulos do projeto, bem como suas ligações\&. 
+.PP
+Definition at line 21 of file Main\&.cpp\&.
+.PP
+References Ram::setCnt(), Fetch::setCnt(), Fetch::setPC(), and Alu::setPC()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Stack_Machine_Dual_Operand from the source code\&.

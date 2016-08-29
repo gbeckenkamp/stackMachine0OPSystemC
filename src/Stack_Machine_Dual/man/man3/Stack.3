@@ -1,0 +1,76 @@
+.TH "Stack" 3 "Sat Sep 5 2015" "Version 1.0" "Stack_Machine_Dual_Operand" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Stack \- 
+.PP
+Pilha de retorno\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Stack\&.h>\fP
+.PP
+Inherits sc_module\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBb_transport\fP (tlm::tlm_generic_payload &trans, sc_time &delay)"
+.br
+.ti -1c
+.RI "\fB~Stack\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Pilha de retorno\&. 
+
+Módulo responsável por manter e fazer a interface da pilha de retorno com os demais blocos\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Gerson Miguel Beckenkamp 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2015/09/05 14:16:20 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file Stack\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Stack::~Stack ()"
+Destrutor do módulo \fBAlu\fP\&. 
+.PP
+Definition at line 100 of file Stack\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Stack::b_transport (tlm::tlm_generic_payload &trans, sc_time &delay)\fC [virtual]\fP"
+Socket responsável por receber requisições oriundas da \fBAlu\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItrans\fP Payload contendo os dados do pacote recebido\&. 
+.br
+\fIdelay\fP Timeout para a condirmação do comando recebido\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file Stack\&.cpp\&.
+.PP
+References RS_SIZE, and SIZE\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Stack_Machine_Dual_Operand from the source code\&.

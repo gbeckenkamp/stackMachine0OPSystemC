@@ -1,0 +1,86 @@
+.TH "Fetch" 3 "Sat Sep 5 2015" "Version 1.0" "Stack_Machine_Dual_Operand" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Fetch \- 
+.PP
+Interface da ROM com o resto do sistema\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Fetch\&.h>\fP
+.PP
+Inherits sc_module\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetPC\fP (int *pc)"
+.br
+.ti -1c
+.RI "void \fBsetCnt\fP (int *cnt)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface da ROM com o resto do sistema\&. 
+
+Módulo responsável por controlar o módulo ROM, carregando as instruções e repasando-as para os módulos \fBAlu\fP e \fBDSController\fP\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Gerson Miguel Beckenkamp 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2015/09/05 14:16:20 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file Fetch\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Fetch::setCnt (int *cnt)"
+Inicia o contador de ciclos de execução do módulo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcnt\fP Ponteiro para o contador de ciclos de execução\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 162 of file Fetch\&.cpp\&.
+.PP
+Referenced by SC_MODULE()\&.
+.SS "void Fetch::setPC (int *pc)"
+Inicia o contador de programa do módulo\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpc\fP Ponteiro para o contador de programa\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Não há retorno\&. 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file Fetch\&.cpp\&.
+.PP
+Referenced by SC_MODULE()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Stack_Machine_Dual_Operand from the source code\&.

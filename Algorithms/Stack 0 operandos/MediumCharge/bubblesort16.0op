@@ -1,0 +1,68 @@
+3                        ## Bubble sort
+8
+7
+9
+1
+2
+4
+12
+store 0
+store 1
+store 2
+store 3
+store 4
+store 5
+store 6
+store 7
+16
+5
+10
+6
+11
+14
+13
+15
+store 8
+store 9
+store 10
+store 11
+store 12
+store 13
+store 14
+store 15                 ##
+15                       ## i=tamanho-1, em for(int i=tamanho-1; i >= 1; i--)
+0                        ## j=0, em for( int j=0; j < i ; j++), start of main loop
+dup                      ## pick address i
+load                     ## load value on vet[i]
+pick 2                   ## pick address j
+add 1                    ## advance one position
+load                     ## load vet[j]
+<                        ## bool(vet[j]>vet[i])
+branch0 43               ## if vet[j]>vet[i], pop the data from the vector and j++
+call 56                  ## call the swap on the vector if vet[j]>vet[i] is false
+branch 45                ## since the function 1 take care of get rid of the data who has ben load from the memory and is placed on the top od DS, skipp the pops
+pop                      ## when there is no swap of values, get rid of the data loaded
+pop
+add 1                    ## j++
+<                        ## bool(j++ < i)
+branch0 49               ## if j++ < i, stay in the main loop, otherwise i--
+branch 34                ## go back to the main loop
+pop                      ## 
+sub 1                    ## i--
+1                        ## push 1
+<                        ## bool(i>1)
+branch0 67               ## if i<1 end the program, else go to main loop
+pop                      ## pop 1
+branch 33                ## go back to the main loop
+pick 3                   ## function 1, swap values on the memory vector
+pick 2                   ## pick the address i and the value vet[j]
+store                    ## vet[i] = vet[j]
+pop                      ## get rid of bouth values
+pop
+pick 2                   ## pick address j
+add 1
+pick 2                   ## pick vet[i]
+store                    ## vet[j] = vet[i]
+pop                      ## get rid of bouth values
+pop;                     ## end of function                  
+nop

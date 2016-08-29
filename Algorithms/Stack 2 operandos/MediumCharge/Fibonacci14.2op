@@ -1,0 +1,20 @@
+14                   ## number of repetitions  ||| Abbreviations (DS - data stack, RL - repetitions left)
+1                    ## This algorithm perform a fibonacci sequence, and place in the top of the data stack the value find in the last iteration.
+1                    ## To do so, the number of repetition left is placed in the tail of the DS, the last calculated value goes on top and the value before on next to the top of DS.
+0                    ## Place a zero to test the end of execution
+-- 3 1               ## The next two RL -- will be done in sequence because the first two values on fibonacci are ones
+beq 0 1 18           ## If RL==0, end
+-- 0 1               ## 
+beq 0 2 18           ## 
+1                    ## Put the starting sequence of fibonacci on the top od DS
+1
+++ 2 0               ## Push to the top the actual RL
+0                    ## Zero to compare
+++ 2 0               ## The last value calculated is placed after the zero
+add 0 4              ## Calculate the new value on fibonacci sequence
+-- 3 1               ## RL --
+0                    ## Zero to compare
+beq 0 1 18           ## If the RL is 0, end
+branch 12            ## Else, go back to the main loop
+++ 2 0               ## Place the result on the top of stack
+nop

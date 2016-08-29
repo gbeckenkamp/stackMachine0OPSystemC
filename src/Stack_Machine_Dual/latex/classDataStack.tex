@@ -1,0 +1,134 @@
+\hypertarget{classDataStack}{\section{Data\+Stack Class Reference}
+\label{classDataStack}\index{Data\+Stack@{Data\+Stack}}
+}
+
+
+Pilha de dados.  
+
+
+
+
+{\ttfamily \#include $<$Data\+Stack.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classDataStack_aa3b9a31c5da46278b9edcdb83419c902}{b\+\_\+transport} (tlm\+::tlm\+\_\+generic\+\_\+payload \&trans, sc\+\_\+time \&delay)
+\item 
+\hyperlink{classDataStack_a3521eabae3f1c0033b6eb26578e67b5d}{$\sim$\+Data\+Stack} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classDataStack_a096402db3243ca7cb735097c6f507464}{R\+S} \mbox{[}\hyperlink{Defines_8h_a6423a880df59733d2d9b509c7718d3a9}{S\+T\+A\+C\+K\+\_\+\+S\+I\+Z\+E}\mbox{]}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classDataStack_a98e11c938a1afac35622e5fb2ed6f9fa}{dsp}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classDataStack_a3a4d8a30f9335fbea81c515bd03fa2f2}{\+\_\+dsp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pilha de dados. 
+
+Módulo responsável por manter e fazer a interface da pilha de dados com os demais blocos.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 25 of file Data\+Stack.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDataStack_a3521eabae3f1c0033b6eb26578e67b5d}{\index{Data\+Stack@{Data\+Stack}!````~Data\+Stack@{$\sim$\+Data\+Stack}}
+\index{````~Data\+Stack@{$\sim$\+Data\+Stack}!Data\+Stack@{Data\+Stack}}
+\subsubsection[{$\sim$\+Data\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}Data\+Stack\+::$\sim$\+Data\+Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDataStack_a3521eabae3f1c0033b6eb26578e67b5d}
+Destrutor do módulo. 
+
+Definition at line 99 of file Data\+Stack.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDataStack_aa3b9a31c5da46278b9edcdb83419c902}{\index{Data\+Stack@{Data\+Stack}!b\+\_\+transport@{b\+\_\+transport}}
+\index{b\+\_\+transport@{b\+\_\+transport}!Data\+Stack@{Data\+Stack}}
+\subsubsection[{b\+\_\+transport}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+Stack\+::b\+\_\+transport (
+\begin{DoxyParamCaption}
+\item[{tlm\+::tlm\+\_\+generic\+\_\+payload \&}]{trans, }
+\item[{sc\+\_\+time \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDataStack_aa3b9a31c5da46278b9edcdb83419c902}
+Socket responsável por fazer a comunicação com o módulo \hyperlink{classDSController}{D\+S\+Controller}. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & Payload contendo os dados do pacote recebido. \\
+\hline
+{\em delay} & Timeout para a condirmação do comando recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Data\+Stack.\+cpp.
+
+
+
+References \+\_\+dsp, D\+S\+\_\+\+S\+I\+Z\+E, dsp, R\+S, and S\+I\+Z\+E.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDataStack_a3a4d8a30f9335fbea81c515bd03fa2f2}{\index{Data\+Stack@{Data\+Stack}!\+\_\+dsp@{\+\_\+dsp}}
+\index{\+\_\+dsp@{\+\_\+dsp}!Data\+Stack@{Data\+Stack}}
+\subsubsection[{\+\_\+dsp}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Data\+Stack\+::\+\_\+dsp\hspace{0.3cm}{\ttfamily [private]}}}\label{classDataStack_a3a4d8a30f9335fbea81c515bd03fa2f2}
+Endereço auxiliar usado no manejo da pilha. 
+
+Definition at line 29 of file Data\+Stack.\+h.
+
+
+
+Referenced by b\+\_\+transport().
+
+\hypertarget{classDataStack_a98e11c938a1afac35622e5fb2ed6f9fa}{\index{Data\+Stack@{Data\+Stack}!dsp@{dsp}}
+\index{dsp@{dsp}!Data\+Stack@{Data\+Stack}}
+\subsubsection[{dsp}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Data\+Stack\+::dsp\hspace{0.3cm}{\ttfamily [private]}}}\label{classDataStack_a98e11c938a1afac35622e5fb2ed6f9fa}
+Endereço do topo da pilha. 
+
+Definition at line 28 of file Data\+Stack.\+h.
+
+
+
+Referenced by b\+\_\+transport().
+
+\hypertarget{classDataStack_a096402db3243ca7cb735097c6f507464}{\index{Data\+Stack@{Data\+Stack}!R\+S@{R\+S}}
+\index{R\+S@{R\+S}!Data\+Stack@{Data\+Stack}}
+\subsubsection[{R\+S}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Data\+Stack\+::\+R\+S\mbox{[}{\bf S\+T\+A\+C\+K\+\_\+\+S\+I\+Z\+E}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classDataStack_a096402db3243ca7cb735097c6f507464}
+Pilha de dados contendo 16 posições, o número máximo posições suportados pelos operandos da instrução. 
+
+Definition at line 27 of file Data\+Stack.\+h.
+
+
+
+Referenced by b\+\_\+transport().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{DataStack_8h}{Data\+Stack.\+h}\item 
+\hyperlink{DataStack_8cpp}{Data\+Stack.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+14           ## Carrega o literal com o valor do fatorial desejado no topo da pilha
+sub' 1       ## Efetua uma subtração sem consumo (DS[Tos+1] = DS[Tos]-1)
+dup          ## Duplica o topo da pilha
+branch0 10   ## Ao chegar em 0, todas as multiplicações já foram executadas e o fim do programa é chamado
+mlt'         ## Multiplica sem consumo os dois valores ao topo (DS[Tos+1] = DS[Tos]*DS[Tos-1])
+pick' 3      ## Coloca o resultado da multiplicação na base da stack
+pop          ## Se livra do valor no topo
+sub 1        ## Subtrai o ultimo valor do fatorial (5! = (5-1)*(5-2)*(5-3))
+dup          ## Suplica o valor calculado já que o branch0 consome o valor usado como booleano
+branch 3     ## Salta para o branch0
+pick 3       ## Traz o resultado para o topo
+nop          ## Fim da execução

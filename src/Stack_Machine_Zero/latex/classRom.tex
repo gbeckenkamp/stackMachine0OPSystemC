@@ -1,0 +1,129 @@
+\hypertarget{classRom}{\section{Rom Class Reference}
+\label{classRom}\index{Rom@{Rom}}
+}
+
+
+Read-\/\+Only Memory.  
+
+
+
+
+{\ttfamily \#include $<$Rom.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+
+
+Collaboration diagram for Rom\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classRom__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRom_a7ae10e2c40489fc7e5727694dab3e906}{$\sim$\+Rom} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classRom_a427f623e435adbff5e49bfc42018ee17}{b\+\_\+transport} (tlm\+::tlm\+\_\+generic\+\_\+payload \&transaction, sc\+\_\+time \&delay)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classRom_aed8f55c20e5ba447c9d312b6bac82dcd}{mem} \mbox{[}\hyperlink{Defines_8h_a3744909059435c19ead1ff15e0fb3257}{R\+O\+M\+\_\+\+D\+E\+P\+T\+H}\mbox{]}
+\item 
+\hyperlink{classFileHandler}{File\+Handler} $\ast$ \hyperlink{classRom_ad7d70385f6cd68a97c89c48f4590cbb1}{fh}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Read-\/\+Only Memory. 
+
+Módulo responsável por manter e fazer a interface entre a memória R\+O\+M com os demais módulos.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 33 of file Rom.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRom_a7ae10e2c40489fc7e5727694dab3e906}{\index{Rom@{Rom}!````~Rom@{$\sim$\+Rom}}
+\index{````~Rom@{$\sim$\+Rom}!Rom@{Rom}}
+\subsubsection[{$\sim$\+Rom}]{\setlength{\rightskip}{0pt plus 5cm}Rom\+::$\sim$\+Rom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRom_a7ae10e2c40489fc7e5727694dab3e906}
+Destrutor do módulo. 
+
+Definition at line 68 of file Rom.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRom_a427f623e435adbff5e49bfc42018ee17}{\index{Rom@{Rom}!b\+\_\+transport@{b\+\_\+transport}}
+\index{b\+\_\+transport@{b\+\_\+transport}!Rom@{Rom}}
+\subsubsection[{b\+\_\+transport}]{\setlength{\rightskip}{0pt plus 5cm}void Rom\+::b\+\_\+transport (
+\begin{DoxyParamCaption}
+\item[{tlm\+::tlm\+\_\+generic\+\_\+payload \&}]{trans, }
+\item[{sc\+\_\+time \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classRom_a427f623e435adbff5e49bfc42018ee17}
+Socket responsável por receber requerimentos de leitura do módulo \hyperlink{classFetch}{Fetch}. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & Payload contendo os dados do pacote recebido. \\
+\hline
+{\em delay} & Timeout para a condirmação do comando recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Rom.\+cpp.
+
+
+
+References mem, and S\+I\+Z\+E.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRom_ad7d70385f6cd68a97c89c48f4590cbb1}{\index{Rom@{Rom}!fh@{fh}}
+\index{fh@{fh}!Rom@{Rom}}
+\subsubsection[{fh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf File\+Handler}$\ast$ Rom\+::fh\hspace{0.3cm}{\ttfamily [private]}}}\label{classRom_ad7d70385f6cd68a97c89c48f4590cbb1}
+Gerenciador de arquivos. 
+
+Definition at line 37 of file Rom.\+h.
+
+\hypertarget{classRom_aed8f55c20e5ba447c9d312b6bac82dcd}{\index{Rom@{Rom}!mem@{mem}}
+\index{mem@{mem}!Rom@{Rom}}
+\subsubsection[{mem}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Rom\+::mem\mbox{[}{\bf R\+O\+M\+\_\+\+D\+E\+P\+T\+H}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classRom_aed8f55c20e5ba447c9d312b6bac82dcd}
+Memória R\+O\+M. 
+
+Definition at line 36 of file Rom.\+h.
+
+
+
+Referenced by b\+\_\+transport().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Rom_8h}{Rom.\+h}\item 
+\hyperlink{Rom_8cpp}{Rom.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+3
+8
+7
+9
+1
+2
+4
+12
+stro 0 0
+stro 1 1
+stro 2 2
+stro 3 3
+stro 4 4
+stro 5 5
+stro 6 6
+stro 7 7
+8                  ## Tamanho do vetor
+1                  ## Index global
+1                  ## Index local, ou seja, que vai ser subtraido até 0
+-- 0 1             ## Calcula o endereço abaixo no vetor
+load 1             ## Carrega do vetor a posição index local
+load 1             ## Carrega do vetor a posição abaixo do index local
+bm 0 1 31          ## Caso o valor no index local seja maior que o anterior, realiza um swap
+0
+branch 34
+0                  ## Carrega zero para comparação
+beq 0 3 34         ## Se o endereço abaixo do index local é 0, o index global é acrescido e index local é resetado
+++ 6 0             ## Caso contrario, carrega o tamanho do vetor, o index global e o novo index
+++ 6 0
+++ 5 0
+branch 19          ## Volta a realizar os carregamentos do vetor
+store 1 2          ## swap
+store 0 3          ## swap
+branch 25
+++ 6 0             ## Função que aumenta o index global, Carrega o tamanho do vetor
+++ 6 1             ## Carrega o index global +1
+sub 0 1            ## Subtrai o index global do tamanho do vetor
+0                  ## Carrega zero para comparação
+beq 0 1 43         ## Se a subtração deu zero, termina o programa
+++ 3 0             ## Caso contrario, recarrega o tamanho do vetor, o index global e iguala o index global com o local
+++ 3 0
+++ 0 0
+branch 19          ## Volta a realizar os carregamentos do vetor 
+nop

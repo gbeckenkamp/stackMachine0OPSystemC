@@ -1,0 +1,42 @@
+digraph "src/Debug.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/Debug.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/Alu.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Alu_8h.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/Alu.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Alu_8cpp.html"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/Main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Main_8cpp.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/DataStack.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DataStack_8h.html"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/DataStack.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DataStack_8cpp.html"];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="src/DSController.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DSController_8h.html"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="src/DSController.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DSController_8cpp.html"];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="src/Fetch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Fetch_8h.html"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="src/Fetch.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Fetch_8cpp.html"];
+  Node9 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="src/Stack.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Stack_8h.html"];
+  Node11 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="src/Stack.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Stack_8cpp.html"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="src/Rom.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Rom_8h.html"];
+  Node13 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="src/Rom.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Rom_8cpp.html"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="src/Ram.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Ram_8h.html"];
+  Node15 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="src/Ram.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Ram_8cpp.html"];
+}

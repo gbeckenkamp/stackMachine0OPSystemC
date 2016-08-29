@@ -1,0 +1,136 @@
+\hypertarget{classStack}{\section{Stack Class Reference}
+\label{classStack}\index{Stack@{Stack}}
+}
+
+
+Pilha de retorno.  
+
+
+
+
+{\ttfamily \#include $<$Return\+Stack.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStack_a9307cd8107283c08c080b22bdd66d196}{set\+Buffers} (int $\ast$buf)
+\item 
+\hyperlink{classStack_a40bd5dff912f0e5290777c4b46d17809}{$\sim$\+Stack} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classStack_a188c0ef6d86bb6100b6c1a63e821bd7f}{b\+\_\+transport} (tlm\+::tlm\+\_\+generic\+\_\+payload \&trans, sc\+\_\+time \&delay)
+\item 
+void \hyperlink{classStack_a5c98f94f6a3a5384c754794b1aebb724}{update\+Buffers} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pilha de retorno. 
+
+Módulo responsável por manter e fazer a interface da pilha de retorno com os demais blocos.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 33 of file Return\+Stack.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classStack_a40bd5dff912f0e5290777c4b46d17809}{\index{Stack@{Stack}!````~Stack@{$\sim$\+Stack}}
+\index{````~Stack@{$\sim$\+Stack}!Stack@{Stack}}
+\subsubsection[{$\sim$\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}Stack\+::$\sim$\+Stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classStack_a40bd5dff912f0e5290777c4b46d17809}
+Destrudor do módulo. 
+
+Definition at line 131 of file Return\+Stack.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStack_a188c0ef6d86bb6100b6c1a63e821bd7f}{\index{Stack@{Stack}!b\+\_\+transport@{b\+\_\+transport}}
+\index{b\+\_\+transport@{b\+\_\+transport}!Stack@{Stack}}
+\subsubsection[{b\+\_\+transport}]{\setlength{\rightskip}{0pt plus 5cm}void Stack\+::b\+\_\+transport (
+\begin{DoxyParamCaption}
+\item[{tlm\+::tlm\+\_\+generic\+\_\+payload \&}]{trans, }
+\item[{sc\+\_\+time \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classStack_a188c0ef6d86bb6100b6c1a63e821bd7f}
+Socket responsável por receber requisições oriundas da \hyperlink{classAlu}{Alu}. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & Payload contendo os dados do pacote recebido. \\
+\hline
+{\em delay} & Timeout para a condirmação do comando recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Return\+Stack.\+cpp.
+
+
+
+References D\+S\+\_\+\+S\+I\+Z\+E, S\+I\+Z\+E, and update\+Buffers().
+
+\hypertarget{classStack_a9307cd8107283c08c080b22bdd66d196}{\index{Stack@{Stack}!set\+Buffers@{set\+Buffers}}
+\index{set\+Buffers@{set\+Buffers}!Stack@{Stack}}
+\subsubsection[{set\+Buffers}]{\setlength{\rightskip}{0pt plus 5cm}void Stack\+::set\+Buffers (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{buf}
+\end{DoxyParamCaption}
+)}}\label{classStack_a9307cd8107283c08c080b22bdd66d196}
+Inicia os buffers de topo de pilha.
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Return\+Stack.\+cpp.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classStack_a5c98f94f6a3a5384c754794b1aebb724}{\index{Stack@{Stack}!update\+Buffers@{update\+Buffers}}
+\index{update\+Buffers@{update\+Buffers}!Stack@{Stack}}
+\subsubsection[{update\+Buffers}]{\setlength{\rightskip}{0pt plus 5cm}void Stack\+::update\+Buffers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classStack_a5c98f94f6a3a5384c754794b1aebb724}
+Executa a sincronização dos buffers com o topo da pilha.
+
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Return\+Stack.\+cpp.
+
+
+
+Referenced by b\+\_\+transport().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ReturnStack_8h}{Return\+Stack.\+h}\item 
+\hyperlink{ReturnStack_8cpp}{Return\+Stack.\+cpp}\end{DoxyCompactItemize}

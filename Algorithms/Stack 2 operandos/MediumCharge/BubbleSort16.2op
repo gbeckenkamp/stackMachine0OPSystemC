@@ -1,0 +1,53 @@
+3            ## In this algorithm, i and j are placed on the top of stack every time that this values are updated.
+8            ## The values loaded from the vector are placed above the i and j.
+7            ## The organization of the stack looks like this (stack grows right): i, j, j++, vet[j], vet[j++];
+9
+1
+2
+4
+12
+stro 0 0
+stro 1 1
+stro 2 2
+stro 3 3
+stro 4 4
+stro 5 5
+stro 6 6
+stro 7 7
+16
+5
+10
+6
+11
+14
+13
+15
+stro 0 8
+stro 1 9
+stro 2 10
+stro 3 11
+stro 4 12
+stro 5 13
+stro 6 14
+stro 7 15
+15            ## i = vet.size - 1
+0             ## j = 0
+++ 0 1        ## Start of function 1, j++
+load 1 0      ## load vet[j]
+load 1 0      ## load vet[j++]
+callm 1 0 42  ## call func2 if vet[j]>vet[j++]
+bme 2 4 45    ## call func3 if j++ >= i
+++ 4 0        ## pick i
+++ 4 1        ## pick j++ 
+branch 34
+store 1 2     ## func2, vet[j] <= vet[j++] 
+store 0 3     ## vet[j++] <= vet[j]  no need for aux since the values are already stored
+return
+-- 4 1        ## func3, i-- 
+0             ## j = 0
+1
+beq 2 0 52    ## end, if i==1
+++ 2 0        ## push to the top i
+++ 2 0        ## push to the top j
+branch 34     ## jump to func1
+nop

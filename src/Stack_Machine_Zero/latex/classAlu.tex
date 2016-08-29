@@ -1,0 +1,609 @@
+\hypertarget{classAlu}{\section{Alu Class Reference}
+\label{classAlu}\index{Alu@{Alu}}
+}
+
+
+Unidade Lógico Aritmética.  
+
+
+
+
+{\ttfamily \#include $<$Alu.\+h$>$}
+
+
+
+Inherits sc\+\_\+module.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAlu_a7a60dcc8e76a08c1cd20597f84cbd321}{set\+Buffers\+D\+S} (int buf\mbox{[}4\mbox{]})
+\item 
+void \hyperlink{classAlu_ab413ef21248de9a39c543d0fd1c233cb}{set\+Buffers\+R\+S} (int buf\mbox{[}4\mbox{]})
+\item 
+void \hyperlink{classAlu_ab3a692120ec7c7a1b7625b8f601272a6}{set\+P\+C} (int $\ast$pc)
+\item 
+void \hyperlink{classAlu_a68e91decd645362078515555cde833e7}{set\+D\+S\+P} (int $\ast$dsp)
+\item 
+void \hyperlink{classAlu_aa507af8006a2862c7b17a3d637ce38de}{set\+R\+S\+P} (int $\ast$rsp)
+\item 
+void \hyperlink{classAlu_af34256a02a7be19a7d60a910db157210}{set\+Sizes} (int $\ast$dss, int $\ast$rss)
+\item 
+virtual void \hyperlink{classAlu_ad8e186aac3201dc8a26cc61d7a90c5d2}{b\+\_\+transport\+\_\+\+Fet} (tlm\+::tlm\+\_\+generic\+\_\+payload \&trans, sc\+\_\+time \&delay)
+\item 
+\hyperlink{classAlu_aab26dc9ed3cb4bdd1d13206f19a00552}{$\sim$\+Alu} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classAlu_a3fabfe3b33df17581f8bc85de9eddeea}{compute} ()
+\item 
+void \hyperlink{classAlu_adf5731c0d59b22371ad9403afaaacff4}{write\+D\+S} (int adr, int op)
+\item 
+void \hyperlink{classAlu_a5ae5ca371b090c716236619f2d63fd74}{write\+R\+S} (int adr, int op)
+\item 
+void \hyperlink{classAlu_a2ab3afd02491a49f20c141c694c2ecbe}{write\+R\+S} (int adr, tlm\+::tlm\+\_\+command cmd)
+\item 
+void \hyperlink{classAlu_ad82f3646bf0843beabf5d0ee18d6e273}{write\+D\+S} (int adr, tlm\+::tlm\+\_\+command cmd)
+\item 
+void \hyperlink{classAlu_aee7f8876c2ebe00f52e3bb55d8f86b73}{write\+R\+A\+M} (int addr, int op)
+\item 
+int \hyperlink{classAlu_a059b74a69d274885568cfbb2e31fc603}{read\+R\+A\+M} (int addr)
+\item 
+int \hyperlink{classAlu_a05a5eb6c972a875195498e91f5418706}{pick\+Source} (int op)
+\item 
+void \hyperlink{classAlu_a39455b035f0298a546de937f9ab21426}{store\+Source} (int op, int data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+int$<$ \hyperlink{Defines_8h_af087b76f9707be9d3b43ba0c782c31c3}{D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H} $>$ \hyperlink{classAlu_a307709e37d80c03970b0165d29dfb4c4}{instruction}
+\item 
+int $\ast$ \hyperlink{classAlu_afc87096d954e9091302d7c1854a910e1}{P\+C}
+\item 
+int $\ast$ \hyperlink{classAlu_a259ee7ef49be47158d26c8c3a0ae1feb}{buffers\+D\+S}
+\item 
+int $\ast$ \hyperlink{classAlu_a4b54db20f10aed5d7d70378b5c9a77fd}{buffers\+R\+S}
+\item 
+int $\ast$ \hyperlink{classAlu_aea20506a48d2027cd27a0c2aec32a4c7}{D\+S\+P}
+\item 
+int $\ast$ \hyperlink{classAlu_ad6e5dacce0eecd38c727b6cc5877d05c}{R\+S\+P}
+\item 
+int $\ast$ \hyperlink{classAlu_ab0be93bc681fe3791cbd8a815d018a89}{D\+S\+S}
+\item 
+int $\ast$ \hyperlink{classAlu_abd81e60239f46572212450b326f2261d}{R\+S\+S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unidade Lógico Aritmética. 
+
+Módulo responsável pela computação dos valores carregados das pilhas e por alocar o resultado na pilha de destino ou em memória.
+
+\begin{DoxyAuthor}{Author}
+Gerson Miguel Beckenkamp 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015/09/05 14\+:16\+:20 
+\end{DoxyDate}
+
+
+Definition at line 35 of file Alu.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAlu_aab26dc9ed3cb4bdd1d13206f19a00552}{\index{Alu@{Alu}!````~Alu@{$\sim$\+Alu}}
+\index{````~Alu@{$\sim$\+Alu}!Alu@{Alu}}
+\subsubsection[{$\sim$\+Alu}]{\setlength{\rightskip}{0pt plus 5cm}Alu\+::$\sim$\+Alu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classAlu_aab26dc9ed3cb4bdd1d13206f19a00552}
+Destrutor do módulo 
+
+Definition at line 1430 of file Alu.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAlu_ad8e186aac3201dc8a26cc61d7a90c5d2}{\index{Alu@{Alu}!b\+\_\+transport\+\_\+\+Fet@{b\+\_\+transport\+\_\+\+Fet}}
+\index{b\+\_\+transport\+\_\+\+Fet@{b\+\_\+transport\+\_\+\+Fet}!Alu@{Alu}}
+\subsubsection[{b\+\_\+transport\+\_\+\+Fet}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::b\+\_\+transport\+\_\+\+Fet (
+\begin{DoxyParamCaption}
+\item[{tlm\+::tlm\+\_\+generic\+\_\+payload \&}]{trans, }
+\item[{sc\+\_\+time \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAlu_ad8e186aac3201dc8a26cc61d7a90c5d2}
+Socket responsável por receber a instrução carregada pelo \hyperlink{classFetch}{Fetch}. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & Payload contendo os dados do pacote recebido. \\
+\hline
+{\em delay} & Timeout para a condirmação do comando recebido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Alu.\+cpp.
+
+
+
+References compute(), instruction, and S\+I\+Z\+E.
+
+\hypertarget{classAlu_a3fabfe3b33df17581f8bc85de9eddeea}{\index{Alu@{Alu}!compute@{compute}}
+\index{compute@{compute}!Alu@{Alu}}
+\subsubsection[{compute}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::compute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a3fabfe3b33df17581f8bc85de9eddeea}
+Interpreta a instrução atual e realiza as computações necessárias. \begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file Alu.\+cpp.
+
+
+
+References buffers\+D\+S, buffers\+R\+S, instruction, P\+C, pick\+Source(), read\+R\+A\+M(), store\+Source(), write\+D\+S(), write\+R\+A\+M(), and write\+R\+S().
+
+
+
+Referenced by b\+\_\+transport\+\_\+\+Fet().
+
+\hypertarget{classAlu_a05a5eb6c972a875195498e91f5418706}{\index{Alu@{Alu}!pick\+Source@{pick\+Source}}
+\index{pick\+Source@{pick\+Source}!Alu@{Alu}}
+\subsubsection[{pick\+Source}]{\setlength{\rightskip}{0pt plus 5cm}int Alu\+::pick\+Source (
+\begin{DoxyParamCaption}
+\item[{int}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a05a5eb6c972a875195498e91f5418706}
+Retorna o valor contido na origem especificada pelo campo source da instrução. 
+\begin{DoxyParams}{Parameters}
+{\em op} & Campo source da instrução. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor contido na origem especificada. 
+\end{DoxyReturn}
+
+
+Definition at line 1241 of file Alu.\+cpp.
+
+
+
+References buffers\+D\+S, buffers\+R\+S, D\+S\+P, D\+S\+S, P\+C, R\+S\+P, and R\+S\+S.
+
+
+
+Referenced by compute().
+
+\hypertarget{classAlu_a059b74a69d274885568cfbb2e31fc603}{\index{Alu@{Alu}!read\+R\+A\+M@{read\+R\+A\+M}}
+\index{read\+R\+A\+M@{read\+R\+A\+M}!Alu@{Alu}}
+\subsubsection[{read\+R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}int Alu\+::read\+R\+A\+M (
+\begin{DoxyParamCaption}
+\item[{int}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a059b74a69d274885568cfbb2e31fc603}
+Executa a leitura da memória R\+A\+M. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Endereço de memória a ser lido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor lido no endereço especificado. 
+\end{DoxyReturn}
+
+
+Definition at line 1207 of file Alu.\+cpp.
+
+
+
+Referenced by compute().
+
+\hypertarget{classAlu_a7a60dcc8e76a08c1cd20597f84cbd321}{\index{Alu@{Alu}!set\+Buffers\+D\+S@{set\+Buffers\+D\+S}}
+\index{set\+Buffers\+D\+S@{set\+Buffers\+D\+S}!Alu@{Alu}}
+\subsubsection[{set\+Buffers\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+Buffers\+D\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{buf\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classAlu_a7a60dcc8e76a08c1cd20597f84cbd321}
+Inicia os buffers da pilha de dados. 
+\begin{DoxyParams}{Parameters}
+{\em buff} & Ponteiro para o array de buffers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Alu.\+cpp.
+
+
+
+References buffers\+D\+S.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classAlu_ab413ef21248de9a39c543d0fd1c233cb}{\index{Alu@{Alu}!set\+Buffers\+R\+S@{set\+Buffers\+R\+S}}
+\index{set\+Buffers\+R\+S@{set\+Buffers\+R\+S}!Alu@{Alu}}
+\subsubsection[{set\+Buffers\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+Buffers\+R\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{buf\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classAlu_ab413ef21248de9a39c543d0fd1c233cb}
+Inicia os buffers da pilha de retorno. 
+\begin{DoxyParams}{Parameters}
+{\em buff} & Ponteiro para o array de buffers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Alu.\+cpp.
+
+
+
+References buffers\+R\+S.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classAlu_a68e91decd645362078515555cde833e7}{\index{Alu@{Alu}!set\+D\+S\+P@{set\+D\+S\+P}}
+\index{set\+D\+S\+P@{set\+D\+S\+P}!Alu@{Alu}}
+\subsubsection[{set\+D\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+D\+S\+P (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{dsp}
+\end{DoxyParamCaption}
+)}}\label{classAlu_a68e91decd645362078515555cde833e7}
+Inicia o endereço de base da pilha de dados na memória. 
+\begin{DoxyParams}{Parameters}
+{\em dsp} & Ponteiro para a base da pilha de dados na memória. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file Alu.\+cpp.
+
+
+
+References D\+S\+P.
+
+\hypertarget{classAlu_ab3a692120ec7c7a1b7625b8f601272a6}{\index{Alu@{Alu}!set\+P\+C@{set\+P\+C}}
+\index{set\+P\+C@{set\+P\+C}!Alu@{Alu}}
+\subsubsection[{set\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+P\+C (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{pc}
+\end{DoxyParamCaption}
+)}}\label{classAlu_ab3a692120ec7c7a1b7625b8f601272a6}
+Inicia o contador de programa do módulo. 
+\begin{DoxyParams}{Parameters}
+{\em pc} & Ponteiro para o contador de programa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Alu.\+cpp.
+
+
+
+References P\+C.
+
+
+
+Referenced by S\+C\+\_\+\+M\+O\+D\+U\+L\+E().
+
+\hypertarget{classAlu_aa507af8006a2862c7b17a3d637ce38de}{\index{Alu@{Alu}!set\+R\+S\+P@{set\+R\+S\+P}}
+\index{set\+R\+S\+P@{set\+R\+S\+P}!Alu@{Alu}}
+\subsubsection[{set\+R\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+R\+S\+P (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{rsp}
+\end{DoxyParamCaption}
+)}}\label{classAlu_aa507af8006a2862c7b17a3d637ce38de}
+Inicia o endereço de base da pilha de retorno na memória. 
+\begin{DoxyParams}{Parameters}
+{\em rsp} & Ponteiro para a base da pilha de retorno na memória. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Alu.\+cpp.
+
+
+
+References R\+S\+P.
+
+\hypertarget{classAlu_af34256a02a7be19a7d60a910db157210}{\index{Alu@{Alu}!set\+Sizes@{set\+Sizes}}
+\index{set\+Sizes@{set\+Sizes}!Alu@{Alu}}
+\subsubsection[{set\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::set\+Sizes (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{dss, }
+\item[{int $\ast$}]{rss}
+\end{DoxyParamCaption}
+)}}\label{classAlu_af34256a02a7be19a7d60a910db157210}
+Inicia os endereços de topo das pilhas de dados e retorno na memória. 
+\begin{DoxyParams}{Parameters}
+{\em dss} & Ponteiro para o topo da pilha de dados na memória. \\
+\hline
+{\em rss} & Ponteiro para o topo da pilha de retorno na memória. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Alu.\+cpp.
+
+
+
+References D\+S\+S, and R\+S\+S.
+
+\hypertarget{classAlu_a39455b035f0298a546de937f9ab21426}{\index{Alu@{Alu}!store\+Source@{store\+Source}}
+\index{store\+Source@{store\+Source}!Alu@{Alu}}
+\subsubsection[{store\+Source}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::store\+Source (
+\begin{DoxyParamCaption}
+\item[{int}]{op, }
+\item[{int}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a39455b035f0298a546de937f9ab21426}
+Guarda o dado computado no destino especificado no campo destination da instrução. 
+\begin{DoxyParams}{Parameters}
+{\em op} & Campo destination da instrução. \\
+\hline
+{\em data} & Dado a ser armazenado no destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor contido na origem especificada. 
+\end{DoxyReturn}
+
+
+Definition at line 1335 of file Alu.\+cpp.
+
+
+
+References D\+S\+P, P\+C, R\+S\+P, write\+D\+S(), and write\+R\+S().
+
+
+
+Referenced by compute().
+
+\hypertarget{classAlu_adf5731c0d59b22371ad9403afaaacff4}{\index{Alu@{Alu}!write\+D\+S@{write\+D\+S}}
+\index{write\+D\+S@{write\+D\+S}!Alu@{Alu}}
+\subsubsection[{write\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::write\+D\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{adr, }
+\item[{int}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_adf5731c0d59b22371ad9403afaaacff4}
+Executa uma escrita da pilha de dados. 
+\begin{DoxyParams}{Parameters}
+{\em adr} & Posição da pilha a ser escrita. \\
+\hline
+{\em op} & Dado a ser escrito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 1041 of file Alu.\+cpp.
+
+
+
+Referenced by compute(), and store\+Source().
+
+\hypertarget{classAlu_ad82f3646bf0843beabf5d0ee18d6e273}{\index{Alu@{Alu}!write\+D\+S@{write\+D\+S}}
+\index{write\+D\+S@{write\+D\+S}!Alu@{Alu}}
+\subsubsection[{write\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::write\+D\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{adr, }
+\item[{tlm\+::tlm\+\_\+command}]{cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_ad82f3646bf0843beabf5d0ee18d6e273}
+Executa uma escrita da pilha de dados. 
+\begin{DoxyParams}{Parameters}
+{\em adr} & Tipo de modulação. \\
+\hline
+{\em cmd} & Comando identificando uma modulação. Padrão = T\+L\+M\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+C\+O\+M\+M\+A\+N\+D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 1142 of file Alu.\+cpp.
+
+\hypertarget{classAlu_aee7f8876c2ebe00f52e3bb55d8f86b73}{\index{Alu@{Alu}!write\+R\+A\+M@{write\+R\+A\+M}}
+\index{write\+R\+A\+M@{write\+R\+A\+M}!Alu@{Alu}}
+\subsubsection[{write\+R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::write\+R\+A\+M (
+\begin{DoxyParamCaption}
+\item[{int}]{addr, }
+\item[{int}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_aee7f8876c2ebe00f52e3bb55d8f86b73}
+Executa a escrita de um dado na memória R\+A\+M. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & Endereço de memória a ser escrito. \\
+\hline
+{\em op} & Dado a ser escrito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 1175 of file Alu.\+cpp.
+
+
+
+Referenced by compute().
+
+\hypertarget{classAlu_a5ae5ca371b090c716236619f2d63fd74}{\index{Alu@{Alu}!write\+R\+S@{write\+R\+S}}
+\index{write\+R\+S@{write\+R\+S}!Alu@{Alu}}
+\subsubsection[{write\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::write\+R\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{adr, }
+\item[{int}]{op}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a5ae5ca371b090c716236619f2d63fd74}
+Executa uma escrita no topo pilha de retorno. 
+\begin{DoxyParams}{Parameters}
+{\em adr} & Posição da pilha a ser escrita. \\
+\hline
+{\em op} & Dado a ser guardado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 1075 of file Alu.\+cpp.
+
+
+
+Referenced by compute(), and store\+Source().
+
+\hypertarget{classAlu_a2ab3afd02491a49f20c141c694c2ecbe}{\index{Alu@{Alu}!write\+R\+S@{write\+R\+S}}
+\index{write\+R\+S@{write\+R\+S}!Alu@{Alu}}
+\subsubsection[{write\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}void Alu\+::write\+R\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{adr, }
+\item[{tlm\+::tlm\+\_\+command}]{cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a2ab3afd02491a49f20c141c694c2ecbe}
+Executa uma modulação no topo da pilha de retorno. 
+\begin{DoxyParams}{Parameters}
+{\em adr} & Tipo de modulação. \\
+\hline
+{\em cmd} & Comando identificando uma modulação. Padrão = T\+L\+M\+\_\+\+I\+G\+N\+O\+R\+E\+\_\+\+C\+O\+M\+M\+A\+N\+D. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Não há retorno. 
+\end{DoxyReturn}
+
+
+Definition at line 1109 of file Alu.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAlu_a259ee7ef49be47158d26c8c3a0ae1feb}{\index{Alu@{Alu}!buffers\+D\+S@{buffers\+D\+S}}
+\index{buffers\+D\+S@{buffers\+D\+S}!Alu@{Alu}}
+\subsubsection[{buffers\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::buffers\+D\+S\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a259ee7ef49be47158d26c8c3a0ae1feb}
+Buffer contendo as 4 posições mais ao topo da pilha de dados. 
+
+Definition at line 40 of file Alu.\+h.
+
+
+
+Referenced by compute(), pick\+Source(), and set\+Buffers\+D\+S().
+
+\hypertarget{classAlu_a4b54db20f10aed5d7d70378b5c9a77fd}{\index{Alu@{Alu}!buffers\+R\+S@{buffers\+R\+S}}
+\index{buffers\+R\+S@{buffers\+R\+S}!Alu@{Alu}}
+\subsubsection[{buffers\+R\+S}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::buffers\+R\+S\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a4b54db20f10aed5d7d70378b5c9a77fd}
+Buffer contendo as 4 posições mais ao topo da pilha de retorno. 
+
+Definition at line 41 of file Alu.\+h.
+
+
+
+Referenced by compute(), pick\+Source(), and set\+Buffers\+R\+S().
+
+\hypertarget{classAlu_aea20506a48d2027cd27a0c2aec32a4c7}{\index{Alu@{Alu}!D\+S\+P@{D\+S\+P}}
+\index{D\+S\+P@{D\+S\+P}!Alu@{Alu}}
+\subsubsection[{D\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::\+D\+S\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_aea20506a48d2027cd27a0c2aec32a4c7}
+Ponteiro para o endereço da base das pilha de dados na R\+A\+M. 
+
+Definition at line 42 of file Alu.\+h.
+
+
+
+Referenced by pick\+Source(), set\+D\+S\+P(), and store\+Source().
+
+\hypertarget{classAlu_ab0be93bc681fe3791cbd8a815d018a89}{\index{Alu@{Alu}!D\+S\+S@{D\+S\+S}}
+\index{D\+S\+S@{D\+S\+S}!Alu@{Alu}}
+\subsubsection[{D\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::\+D\+S\+S\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_ab0be93bc681fe3791cbd8a815d018a89}
+Ponteiro para a última posição atualizada do topo da pilhas de dados. 
+
+Definition at line 44 of file Alu.\+h.
+
+
+
+Referenced by pick\+Source(), and set\+Sizes().
+
+\hypertarget{classAlu_a307709e37d80c03970b0165d29dfb4c4}{\index{Alu@{Alu}!instruction@{instruction}}
+\index{instruction@{instruction}!Alu@{Alu}}
+\subsubsection[{instruction}]{\setlength{\rightskip}{0pt plus 5cm}sc\+\_\+int$<${\bf D\+A\+T\+A\+\_\+\+W\+I\+D\+T\+H}$>$ Alu\+::instruction\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_a307709e37d80c03970b0165d29dfb4c4}
+Instrução atual. 
+
+Definition at line 38 of file Alu.\+h.
+
+
+
+Referenced by b\+\_\+transport\+\_\+\+Fet(), and compute().
+
+\hypertarget{classAlu_afc87096d954e9091302d7c1854a910e1}{\index{Alu@{Alu}!P\+C@{P\+C}}
+\index{P\+C@{P\+C}!Alu@{Alu}}
+\subsubsection[{P\+C}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::\+P\+C\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_afc87096d954e9091302d7c1854a910e1}
+Contador de programa. 
+
+Definition at line 39 of file Alu.\+h.
+
+
+
+Referenced by compute(), pick\+Source(), set\+P\+C(), and store\+Source().
+
+\hypertarget{classAlu_ad6e5dacce0eecd38c727b6cc5877d05c}{\index{Alu@{Alu}!R\+S\+P@{R\+S\+P}}
+\index{R\+S\+P@{R\+S\+P}!Alu@{Alu}}
+\subsubsection[{R\+S\+P}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::\+R\+S\+P\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_ad6e5dacce0eecd38c727b6cc5877d05c}
+Ponteiro para o endereço da base das pilha de retorno na R\+A\+M. 
+
+Definition at line 43 of file Alu.\+h.
+
+
+
+Referenced by pick\+Source(), set\+R\+S\+P(), and store\+Source().
+
+\hypertarget{classAlu_abd81e60239f46572212450b326f2261d}{\index{Alu@{Alu}!R\+S\+S@{R\+S\+S}}
+\index{R\+S\+S@{R\+S\+S}!Alu@{Alu}}
+\subsubsection[{R\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Alu\+::\+R\+S\+S\hspace{0.3cm}{\ttfamily [private]}}}\label{classAlu_abd81e60239f46572212450b326f2261d}
+Ponteiro para a última posição atualizada do topo da retorno na memória. 
+
+Definition at line 45 of file Alu.\+h.
+
+
+
+Referenced by pick\+Source(), and set\+Sizes().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Alu_8h}{Alu.\+h}\item 
+\hyperlink{Alu_8cpp}{Alu.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+15            ## Carrega 7 no topo da pilha
+call 3        ## Chama a função principal
+branch 10     ## Pula para o fim
+sub' 1        ## Inicia a função principal, subtraindo o topo da pilha
+dup           ## Duplica o valor a recem calculado, já que o branch0 irá consumir o valor no topo
+branch0 8     ## Se o topo for 0, começa a desempilhar os valores
+call 3        ## Chama a função principal novamente, após a chamada, continua a execução daqui
+mlt;          ## Multiplica os dois valores no topo da pilha, e e retorna a função que o chamou
+pop           ## Se livra do valor 0 no topo
+branch 7;     ## Para de empilhar e começa a desempilhar a partir da multiplicação
+nop           ## Fim da execução
